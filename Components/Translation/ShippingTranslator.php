@@ -36,7 +36,9 @@ class ShippingTranslator
             $shipping['dispatch_name'] = $shippingTranslations[$dispatchId]['dispatch_name'];
         }
 
-        $shipping['description'] = $shippingTranslations[$dispatchId]['description'];
+        if (!empty($shippingTranslations[$dispatchId]['description'])) {
+            $shipping['description'] = $shippingTranslations[$dispatchId]['description'];
+        }
 
         return $shipping;
     }
